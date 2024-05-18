@@ -12,16 +12,17 @@ Title
 
         <form action="{{ route('post.store')}}" method="post">
             @csrf
-            <div class="mb-3">
+            <div class="mb-3 w-50">
                 <label for="title" class="form-label">Enter title</label>
                 <input name="name" type="text" class="form-control" id="name" placeholder="Title">
             </div>
-            <div class="mb-3">
+            <div class="mb-3 w-50">
                 <label for="content" class="form-label">Content</label>
                 <textarea name="post" class="form-control" id="post" placeholder="Content"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Create</button>
+
             <a class=" btn btn-outline-secondary m-2 text-decoration-none" href="/posts">Back <svg
                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
@@ -30,6 +31,12 @@ Title
                     </path>
                 </svg></a>
         </form>
+        <select class="form-select form-select-lg mt-4 w-50" aria-label="Large select example" name="category_id">
+            <!-- <option selected>Menu Categoy</option> -->
+            @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category->title}}</option>
+            @endforeach
+        </select>
 
     </main>
 </div>

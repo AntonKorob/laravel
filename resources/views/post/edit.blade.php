@@ -13,14 +13,14 @@ Title
         <form action="{{ route('post.update', $post->id)}}" method="post">
             @csrf
             @method('patch')
-            <div class="mb-3">
+            <div class="mb-3 w-50">
                 <label for="title" class="form-label">Enter title</label>
                 <input name="name" type="text" class="form-control" id="name" placeholder="Title"
                     value="{{$post->name}}" required>
             </div>
             <div class="mb-3">
                 <label for="content" class="form-label">Content</label>
-                <textarea name="post" class="form-control" id="post" placeholder="Content"
+                <textarea name="post" class="form-control w-50" id="post" placeholder="Content"
                     required>{{$post->post}}</textarea>
             </div>
 
@@ -33,6 +33,7 @@ Title
                     </path>
                 </svg></a>
         </form>
+
 
     </main>
 </div>
