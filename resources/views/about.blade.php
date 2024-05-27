@@ -63,6 +63,7 @@ About
 
         </tbody>
     </table>
+    <div class="min-vh-100"> </div>
 </div>
 </main>
 @endsection
