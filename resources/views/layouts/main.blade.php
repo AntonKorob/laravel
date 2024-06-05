@@ -27,15 +27,14 @@
                     </a>
                 </div> -->
 
-            <ul class="nav col-12 col-md-auto mb-5 justify-content-center mb-md-0">
+            <ul class="nav col-12 col-md-auto mb-5 justify-content-center mb-md-0 bg-indigo-200 p-3 m-3">
                 <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
                 <li><a href="/about" class="nav-link rounded px-2 ">About</a></li>
                 <li><a href="/posts" class="nav-link rounded px-2">Posts</a></li>
+                <li><a href="/postsnew" class="nav-link rounded px-2">New_Page</a></li>
                 <li><a href="/contacts" class="nav-link rounded px-2">Contacts</a></li>
                 <li><a href="/file" class="nav-link rounded px-2">Upload_img</a></li>
             </ul>
-
-
 
             @if (Route::has('login'))
 
@@ -63,7 +62,7 @@
             @endif
         </div>
 
-        <div class="container justify-content-between">
+        <div class="container justify-content-between mt-4">
             <!--Вызов @yield('content') -->
             @yield('content')
 
@@ -71,12 +70,11 @@
 
 
         <!-- FOOTER -->
-        <footer class="footer mt-auto py-3 bg-secondary">
+        <footer class="footer mt-auto py-3 bg-indigo-200">
             <div class="container text-white">
                 <p class="float-end text-white"><a href="#" class="text-white">Back to top</a></p>
-                <p>© {{date('Y')}} Company, Inc. - <a href="#" class="text-white">Privacy</a> - <a class="text-white"
-                        href="#">Terms</-a>
-                </p>
+                <p>© {{date('Y')}} Company, Inc.</p>
+
 
             </div>
         </footer>

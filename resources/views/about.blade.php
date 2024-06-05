@@ -6,24 +6,23 @@ About
 @endsection
 
 @section('content')
-<div>
+<div class="mt-3 ">
     <main>
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-            @for($i = 0 ; $i < 3; $i++) <div class="col">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center ">
+            @foreach($show as $key => $value)
+            @if($key < 3) <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Pro</h4>
+                    <div class="card-header py-3 ">
+                        <h4 class="my-0 fw-normal ">Pro</h4>
                     </div>
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">
-                            $
-                            @foreach($show as $value)
-                            <p>{{$value->price}}</p>
-                            @endforeach
+
+                            <p>{{$key +1}} $ {{$value->price}}</p>
 
                             <small class="text-body-secondary fw-light">/mo</small>
                         </h1>
-                        <ul class="list-unstyled mt-3 mb-4">
+                        <ul class="list-unstyled mt-3 mb-4 ">
                             <li>20 users included</li>
                             <li>10 GB of storage</li>
                             <li>Priority email support</li>
@@ -33,7 +32,8 @@ About
                     </div>
                 </div>
         </div>
-        @endfor
+        @endif
+        @endforeach
 </div>
 </div>
 

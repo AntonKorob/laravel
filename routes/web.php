@@ -8,6 +8,13 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\NewPageController;
+use App\Http\Controllers\NewLinkPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,10 +27,24 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//whereAlpha  whereNumber   whereAlphaNumeric
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/welcome', function () 
+{
+    return view('welcome');
+});
+
+Route::get('/posts2', [PostsController::class, 'showNew']);
+Route::get('/postsnew', [PostsController::class, 'show2']);
+
+Route::get('/newpage', [NewPageController::class, 'showNewPage'] );
+
+Route::get('/newpage2', [UsersController::class, 'shownew'] );
+
+Route::get('/newlinkpage', [NewLinkPageController::class, 'showNewLinkPage'] );
+
+
+//===========================================================================
 
 Route::get('/', [MainController::class, 'index'])->name('post.index');
 
